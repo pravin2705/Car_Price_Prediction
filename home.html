@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Machine Learning Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>  
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body style ="background-color:lightsalmon;">
+ <div class="login">
+  <center>
+    <h1>Car Prediction</h1>
+
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Symboling" placeholder="Symboling" required="required" />
+        <input type="text" name="normalized-losses" placeholder="Snormalized-losses" required="required" />
+        <label>Fuel-Type</label>
+        <select name="Fuel-Type" id="Fuel-Type">
+          <option value="1" id ="Fuel-Type">gas</option>
+          <option value="0" id ="Fuel-Type">diesel</option>
+          <option value="3" id ="Fuel-Type">None</option>
+        </select>
+        
+        <input type="text" name="aspiration" placeholder="aspiration" required="required" />
+        <br><br>
+        <label>Num_of_Doors</label>
+        <select name="Num_of_Doors" id="Num_of_Doors">
+          <option value="4" id ="Num_of_Doors">four</option>
+          <option value="2" id ="Num_of_Doors">two</option>
+          <option value="0" id ="Num_of_Doors">None</option>
+        </select>
+        <input type="text" name="drive_wheels" placeholder="drive_wheels" required="required" />
+        <input type="text" name="engine_location" placeholder="engine_location" required="required" />
+        <input type="text" name="wheel_base" placeholder="wheel_base" required="required" />
+        <br><br>
+        <input type="text" name="length" placeholder="length" required="required" />
+      
+        <input type="text" name="width" placeholder="width" required="required" />
+        <input type="text" name="height" placeholder="height" required="required" />
+        <input type="text" name="curb_weight" placeholder="curb_weight" required="required" />
+        <br><br>
+
+        <label>Num_of_Cylinders</label>
+        <select name="Num_of_Cylinders" id="Num_of_Cylinders">
+          <option value="4" id ="Num_of_Cylinders">four</option>
+          <option value="2" id ="Num_of_Cylinders">two</option>
+          <option value="6" id ="Num_of_Cylinders">six</option>
+          <option value="5" id ="Num_of_Cylinders">five</option>
+          <option value="8" id ="Num_of_Cylinders">eight</option>
+          <option value="3" id ="Num_of_Cylinders">three</option>
+          <option value="12" id ="Num_of_Cylinders">twelve</option>
+        </select>
+        
+        <input type="text" name="engine_size" placeholder="engine_size" required="required" />
+        <input type="text" name="bore" placeholder="bore" required="required" />
+        <input type="text" name="stroke" placeholder="stroke" required="required" />
+        <br><br>
+        <input type="text" name="compression_ratio" placeholder="compression_ratio" required="required" />
+      
+        <input type="text" name="horsepower" placeholder="horsepower" required="required" />
+        <input type="text" name="peak_rpm" placeholder="peak_rpm" required="required" />
+        <input type="text" name="city_mpg" placeholder="city_mpg" required="required" />
+        <br><br>
+        <input type="text" name="highway_mpg" placeholder="highway_mpg" required="required" />
+        <input type="text" name="body-style_convertible" placeholder="body-style_convertible" required="required" />
+        <input type="text" name="body-style_hardtop" placeholder="body-style_hardtop" required="required" />
+        <input type="text" name="body-style_hatchback" placeholder="body-style_hatchback" required="required" />
+        <input type="text" name="body-style_sedan" placeholder="body-style_sedan" required="required" />
+        <input type="text" name="body-style_wagon" placeholder="body-style_wagon" required="required" />
+        <br><br>
+        <input type="text" name="engine-type_dohc" placeholder="engine-type_dohc" required="required" />
+        <input type="text" name="engine-type_dohcv" placeholder="engine-type_dohcv" required="required" />
+        <input type="text" name="engine-type_l" placeholder="engine-type_l" required="required" />
+        <input type="text" name="engine-type_ohc" placeholder="engine-type_ohc" required="required" />
+        <input type="text" name="engine-type_ohcf" placeholder="engine-type_ohcf" required="required" />
+        <input type="text" name="engine-type_ohcv" placeholder="engine-type_ohcv" required="required" />
+        <input type="text" name="engine-type_rotor" placeholder="engine-type_rotor" required="required" />
+        
+        <br><br>
+
+        <input type="text" name="fuel-system_1bbl" placeholder="fuel-system_1bbl" required="required" />
+        <input type="text" name="fuel-system_2bbl" placeholder="fuel-system_2bbl" required="required" />
+        <input type="text" name="fuel-system_4bbl" placeholder="fuel-system_4bbl" required="required" />
+        <input type="text" name="fuel-system_idi" placeholder="fuel-system_idi" required="required" />
+        <input type="text" name="fuel-system_mfi" placeholder="fuel-system_mfi" required="required" />
+        <input type="text" name="fuel-system_mpfi" placeholder="fuel-system_mpfi" required="required" />
+        <input type="text" name="fuel-system_spdi" placeholder="fuel-system_spdi" required="required" />
+        <input type="text" name="fuel-system_spfi" placeholder="fuel-system_spfi" required="required" />
+      
+        <br><br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+  </center> 
+ </div>
+
+
+</body>
+</html>
